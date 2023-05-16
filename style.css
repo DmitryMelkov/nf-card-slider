@@ -171,10 +171,38 @@ label {
   overflow-y: auto;
 }
 
+.swiper-card__list-item {
+  color: white;
+}
+
+.swiper-card__list-link {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.swiper-card__list-link:hover,
+.swiper-card__list-link:active {
+  color: purple;
+}
+
+.swiper-card__list-link:focus {
+  color: purple;
+  outline: none;
+}
+
+.swiper-card__descr-content-2 {
+  max-height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
 .swiper-card__descr {
+  padding: 5px;
   margin-top: 0;
   margin-bottom: 0;
-  text-align: center;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
@@ -289,6 +317,7 @@ label {
 }
 
 .swiper-card__modal-content {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -301,6 +330,11 @@ label {
   width: 100%;
   max-width: 800px;
   border-radius: 8px;
+}
+
+.swiper-card__modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .swiper-card__modal-close {
@@ -330,6 +364,10 @@ label {
   .swiper-card__btns {
     display: flex;
   }
+}
+
+@media (max-width: 800px) {
+
 }
 
 @media (max-width: 500px) {
