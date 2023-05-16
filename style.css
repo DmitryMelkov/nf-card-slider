@@ -92,10 +92,20 @@ label {
 }
 
 /* swiper-card */
-
-.swiper-card {
+.swiper-card__main-header {
   margin-top: 150px;
-  margin-bottom: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swiper-card__main-title {
+  margin-top: 0;
+  font-size: 22px;
+  line-height: 22px;
+  font-style: 800px;
+  color: black;
+}
+.swiper-card {
   padding-bottom: 50px;
 }
 .swiper-card__slide {
@@ -154,7 +164,17 @@ label {
   color: white;
 }
 
+.swiper-card__descr-content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
 .swiper-card__descr {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
@@ -163,6 +183,8 @@ label {
 
 .swiper-card__btn-content {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .swiper-card__btn {
@@ -182,10 +204,17 @@ label {
   background-image: linear-gradient(90.45deg, #c82fed 0.39%, #b405fcdb 102.83%);
 }
 
+.swiper-card__inner {
+  max-width: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
 .swiper-card__header {
-  font-size: 24px;
+  text-align: center;
+  font-size: 22px;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 22px;
   color: white;
 }
 
@@ -195,6 +224,40 @@ label {
   background-color: purple;
 }
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-card__btns {
+  display: none;
+}
+
+.swiper-card__btn-next {
+  margin-left: 5px;
+}
+
+.swiper-card__btn-next,
+.swiper-card__btn-prev {
+  position: static;
+  background-color: purple;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.swiper-card__btn-next:active,
+.swiper-card__btn-prev:active {
+  opacity: 0.7;
+}
+
+.swiper-card__btn-next:focus,
+.swiper-card__btn-prev:focus {
+  opacity: 0.7;
+  outline: none;
+}
 
 /* modal */
 .swiper-card__modal {
@@ -257,13 +320,24 @@ label {
   height: 15px;
 }
 
-
-
 @media (max-width: 910px) {
   .swiper-card__slide:not(:last-child) {
     margin-right: 0;
   }
   .swiper-card__slide {
     max-width: none;
+  }
+  .swiper-card__btns {
+    display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  .swiper-card {
+    padding-bottom: 35px;
+  }
+  .swiper-card .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
   }
 }

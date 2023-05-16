@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const swiperCardFunc = () => {
       if (window.innerWidth <= 910 && swiperCard.dataset.mobile == 'false') {
         var swiper = new Swiper(swiperCard, {
-          loop: true,
           pagination: {
             el: '.swiper-card__pagination',
             clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-card__btn-next',
+            prevEl: '.swiper-card__btn-prev',
           },
           breakpoints: {
             320: {
@@ -51,6 +54,4 @@ document.addEventListener('DOMContentLoaded', () => {
   modalClose.addEventListener('click', () => {
     modalWindow.classList.remove('open');
   });
-
-  
 });
